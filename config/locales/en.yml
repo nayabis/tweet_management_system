@@ -36,6 +36,12 @@ en:
     unauthorized: "Unauthorized: Your session Expired or You don't have the admin access"
     not_found: "User doesn't exist"
     not_authenticated: "Your session Expired. Please login"
+    blank_email: "Email not present"
+    password_changed: "Password changed Successfully"
+    not_found: "Email address not found. Please check and try again."
+    token:
+      blank: "Token not present"
+      invalid_link: 'Link not valid or expired. Try generating a new link.'
   tweet:
     success:
       create: "Tweet created successfully"

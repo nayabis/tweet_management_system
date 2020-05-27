@@ -27,7 +27,7 @@ class TweetsController < ApplicationController
 			}
 		end
 		rescue => error
-		render json: {error_message: error.message}
+		render json: {error_message: error.message, message: I18n.t('tweet.failure')}
 	end
 
 	def destroy

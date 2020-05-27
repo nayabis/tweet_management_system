@@ -7,7 +7,7 @@ class User < ApplicationRecord
 	validates_presence_of :email
 	validates_uniqueness_of :email
 	has_many :tweets
-	after_initialize :set_default_role, :if => :new_record?
+	after_create :set_default_role
 
 	def generate_password_token!
 	 self.reset_password_token = generate_token
@@ -33,6 +33,7 @@ class User < ApplicationRecord
 	
 	def set_default_role
 		self.admin = true if User::ADMIN_EMAIL_DOMAIN.include? self.get_email_domain.to_s
+		self.save
 	end
 
 	def get_email_domain
