@@ -30,4 +30,16 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  user: 
+    registration_success: "User registered successfully"
+    registration_failed: "User registration failed"
+    unauthorized: "Unauthorized: Your session Expired or You don't have the admin access"
+    not_found: "User doesn't exist"
+    not_authenticated: "Your session Expired. Please login"
+  tweet:
+    success:
+      create: "Tweet created successfully"
+      update: "Tweet Updated Successfully"
+      delete: "Tweet Deleted Successfully"
+    failure: "Unprocessible Entity"
+
