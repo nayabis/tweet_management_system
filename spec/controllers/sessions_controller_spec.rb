@@ -3,6 +3,10 @@ require 'rails_helper'
 RSpec.describe SessionsController, type: :controller do
 
 	describe 'create' do
+		before(:each) do
+	  		User.destroy_all
+	  		Tweet.destroy_all
+  		end
 
 		it "should create session" do
 			user = create(:user)

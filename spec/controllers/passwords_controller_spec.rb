@@ -3,6 +3,11 @@ require 'rails_helper'
 RSpec.describe PasswordsController, type: :controller do
 	
 	describe "forgot" do
+		before(:each) do
+	  		User.destroy_all
+	  		Tweet.destroy_all
+  		end
+
 		it "should throw error if email is blank" do
 			post :forgot, params: {email: nil}
 			res = JSON.parse(response.body)
@@ -26,6 +31,12 @@ RSpec.describe PasswordsController, type: :controller do
 	end
 
 	describe "reset" do
+
+		before(:each) do
+	  		User.destroy_all
+	  		Tweet.destroy_all
+  		end
+  		
 		it "should throw error if email is blank" do
 			post :reset, params: {email: nil}
 			res = JSON.parse(response.body)

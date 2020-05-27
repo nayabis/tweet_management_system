@@ -54,6 +54,11 @@ RSpec.describe TweetsController, type: :controller do
 
   describe "update" do
 
+    before(:each) do
+      User.destroy_all
+      Tweet.destroy_all
+    end
+
   	it "returns http success" do
   		user = create(:user)
     	post :create, params: {"message" => "Demo Tweet", "email" => user.email, "password" => user.password}
@@ -97,6 +102,11 @@ RSpec.describe TweetsController, type: :controller do
   end
 
   describe 'delete' do
+
+    before(:each) do
+      User.destroy_all
+      Tweet.destroy_all
+    end
 
   	it"should allow admin users to delete" do
   		post = create(:tweet)
